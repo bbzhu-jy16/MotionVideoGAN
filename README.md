@@ -71,6 +71,9 @@ bash script/ucf101/run_evaluate.sh
 
 ## Acknowledgements
 Our code borrows code from StyleGAN3[1], LowRankGAN[2], and MoCoGAN-HD[3].
+
 [1] https://github.com/NVlabs/stylegan3
+
 [2] https://github.com/zhujiapeng/LowRankGAN
+
 [3] https://github.com/snap-research/MoCoGAN-HD
