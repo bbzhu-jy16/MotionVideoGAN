@@ -47,7 +47,7 @@ python train.py --outdir=~/training-runs --cfg=stylegan2 --data=training_data_pa
 
 ### Fine-tune pre-trained models
 python train.py --outdir=~/training-runs --cfg=stylegan2 --data=training_data_path/data.zip \
-    --gpus=4 --batch=32 --gamma=1 --mirror=1 --kimg=5000 --snap=5 \
+    --gpus=4 --batch=32 --gamma=1 --mirror=1 --kimg=25000 --snap=50 \
     --resume=~/training-runs/pre-trained_model.pkl
 
 
