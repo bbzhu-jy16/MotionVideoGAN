@@ -1,4 +1,4 @@
-## MotionVideoGAN pytorch implementation
+# MotionVideoGAN pytorch implementation
 
 ## Requirements
 * Linux is supported.
@@ -29,23 +29,23 @@
   - tensorboard
 
 
-## MotionStyleGAN
+# MotionStyleGAN
 We modified the source code of StyleGAN3 (pytorch) to generate two images sharing the same contents but producing different motions. 
 
 ## Preparing datasets
 Reorganized datasets are needed for MotionStyleGAN training. We recommend concating image pairs and using our code for dataset generation.
 
-# 256x256 resolution source data for example
+### 256x256 resolution source data for example
 python dataset_tool.py --source=dataset_path/images_concated --dest=training_data_path/data.zip --resolution=256x512
 
 ## Train MotionStyleGAN model
 cd MotionStyleGAN
 
-# UCF101 dataset for example
+### UCF101 dataset for example
 python train.py --outdir=~/training-runs --cfg=stylegan2 --data=training_data_path/data.zip \
     --gpus=4 --batch=32 --gamma=1 --mirror=1 --kimg=25000 --snap=50 
 
-# Fine-tune pre-trained models
+### Fine-tune pre-trained models
 python train.py --outdir=~/training-runs --cfg=stylegan2 --data=training_data_path/data.zip \
     --gpus=4 --batch=32 --gamma=1 --mirror=1 --kimg=5000 --snap=5 \
     --resume=~/training-runs/pre-trained_model.pkl
@@ -54,20 +54,23 @@ python train.py --outdir=~/training-runs --cfg=stylegan2 --data=training_data_pa
 ## Motion Code Generation
 cd ../MotionVideoGAN
 
-# Compute Jacobian Matrix
+### Compute Jacobian Matrix
 python compute_jacobian.py --restore_path ~/training-runs/pre-trained_model.pkl
 
-# Compute Motion Codes
+### Compute Motion Codes
 python compute_directions.py jacobian.npy
 
 ## Train MotionVideoGAN Model
 Our code is repoduced based on MoCoGAN-HD.
 
-# UCF101 for example
+### UCF101 for example
 bash script/ucf101/run_train.sh
 
-## Generate Videos with MotionVideoGAN Model(UCF101 for example)
+### Generate Videos with MotionVideoGAN Model(UCF101 for example)
 bash script/ucf101/run_evaluate.sh
 
 ## Acknowledgements
-Our code borrows code from StyleGAN3, LowRankGAN and MoCoGAN-HD.
+Our code borrows code from StyleGAN3[1], LowRankGAN[2], and MoCoGAN-HD[3].
+[1] https://github.com/NVlabs/stylegan3
+[2] https://github.com/zhujiapeng/LowRankGAN
+[3] https://github.com/snap-research/MoCoGAN-HD
