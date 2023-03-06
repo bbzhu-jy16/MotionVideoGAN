@@ -1,5 +1,11 @@
 # MotionVideoGAN pytorch implementation
 
+Source Code of paper accpet by IEEE Transactions on Multimedia:
+
+MotionVideoGAN: A Novel Video Generator Based on the Motion Space Learned from Image Pairs
+
+Early access version: https://ieeexplore.ieee.org/document/10057062
+
 ## Requirements
 * Linux is supported.
 * 64-bit Python 3.8 (or later) and PyTorch 1.9.0 (or later).
