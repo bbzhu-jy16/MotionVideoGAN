@@ -77,3 +77,16 @@ Our code borrows code from StyleGAN3[1], LowRankGAN[2], and MoCoGAN-HD[3].
 [2] https://github.com/zhujiapeng/LowRankGAN
 
 [3] https://github.com/snap-research/MoCoGAN-HD
+
+### Citation
+
+```latex
+@article{10057062,
+  author={Zhu, Jingyuan and Ma, Huimin and Chen, Jiansheng and Yuan, Jian},
+  journal={IEEE Transactions on Multimedia}, 
+  title={MotionVideoGAN: A Novel Video Generator Based on the Motion Space Learned From Image Pairs}, 
+  year={2023},
+  volume={25},
+  pages={9370-9382},
+  doi={10.1109/TMM.2023.3251095}}
+```
